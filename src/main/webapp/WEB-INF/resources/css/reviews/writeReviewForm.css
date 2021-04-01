@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+
+*{
+}
+
+.reviewForm {
+    margin: auto;
+    width: 40%;
+    height: 60%;
+    background-color: var(--background-otmeal);
+}
+
+.rcontainer{
+    width: 400px;
+    padding: 20px 30px;
+    border: 1px solid var(--secondary-orange);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+.rmain {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    text-align: center;
+}
+
+.rcontainer .star-widget input{
+    display: none;
+}
+
+.star-widget label{
+    font-size: 40px;
+    color: rgb(212,212,212);
+    padding: 10px;
+    float: right;
+    transition: all 0.2s ease;
+    margin-bottom: 10px;
+}
+
+.star-widget input:not(:checked) ~ label:hover,
+.star-widget input:not(:checked) ~ label:hover ~ label{
+    color: #fd4;
+}
+
+input:checked ~ label{
+    color: #fd4;
+}
+
+input#rate-5:checked ~ label{
+    color: #fe7;
+    text-shadow: 0px 0px 10px rgb(255, 186, 59), 0 0 20px rgb(255, 208, 0);
+}
+
+input:not(:checked) ~ header::before{
+    content: "별점을 매겨주세요!";
+}
+#rate-1:checked ~ header::before{
+    content: "별로예요";
+}
+#rate-2:checked ~ header::before{
+    content: "그냥 그래요";
+}
+#rate-3:checked ~ header::before{
+    content: "보통이에요";
+}
+#rate-4:checked ~ header::before{
+    content: "맘에 들어요";
+}
+#rate-5:checked ~ header::before{
+    content: "아주 좋아요";
+}
+
+.rform header{
+    margin-top: 20px;
+    width: 100%;
+    font-size: 25px;
+    color: rgb(255, 186, 59);
+    font-weight: 500;
+    margin: 5px 0 20px 0;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.rform .textarea{
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.rform .textarea textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: black;
+    border: 1px solid rgba(212,212,212);
+
+    padding: 10px;
+    font-size: 17px;
+    resize: none;
+}
+
+.textarea > #REVIEW_CONTENT::placeholder {
+    color: rgb(212,212,212);
+    font-size: 15px;
+}
+
+.rform .btn{
+    height: 45px;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.rform .btn button{
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgba(212,212,212);
+    background-color: var(--primary-brown-light);
+    outline: none;
+  
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rform .btn button:hover{
+    background: var(--primary-brown);
+    color: white;
+}

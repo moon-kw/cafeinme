@@ -1,0 +1,302 @@
+
+@charset "UTF-8";
+
+
+* {
+	/*outline:1px solid red;*/
+}
+
+#mypage {
+   	height: 100%;
+    
+}
+
+
+.body {
+	display:flex;
+	flex-direction: row;
+	width:100%;
+	height:100%;
+	background-color:var( --background-otmeal);
+}
+
+.main {
+	height:100%;
+	width:50%;
+	min-width:617px;
+	margin: auto;
+	padding: 50px;
+	background-color:white;
+}
+
+.title {
+	font-family: "S-CoreDream-6Bold";
+	font-size:25px;
+}
+
+.subtitle {
+	font-family: "S-CoreDream-4Regular";
+	font-size:15px;
+}
+
+#modifyForm {
+	margin:auto;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	width:fit-content;
+}
+
+#modifyForm > label {
+    padding: top 16dp, bottom 8dp;
+    font-family: "S-CoreDream-4Regular";
+}
+
+#modifyForm > ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+div#text {
+	width:100%;
+}
+
+.infotoptop {
+    display : flex;
+    flex-direction:row;
+    justify-content:space-between;
+    margin-top: 50px;
+}
+
+.infotop {
+    display : flex;
+    margin-top: 30px;
+ 
+}
+
+
+.infomiddle {
+    display : flex;
+    margin-top: 30px;
+}
+
+.infobottom {
+	width:100%;
+    margin-top: 30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:baseline;
+}
+
+.address_title {
+	width:100%;
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+}
+
+#city, #postnum {
+    display: inline-block;
+}
+
+input {
+    width: 250px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: 1px solid rgb(212,212,212);
+    border-radius:5px;
+    text-indent:10px;
+    font-size:13px;
+    
+}
+
+input:focus {
+   outline: none;
+   background-color:rgb(240,240,240);
+}
+
+#text:focus-within {
+	color: var(--secondary-orange);
+}
+
+.member_id {
+	border:none;
+	width:100%;
+	text-indent:0;
+	font-size: var(--font-medium);
+}
+
+.member_id:focus {
+	border:none;
+	cursor:default;
+	background-color: white;
+}
+
+.member_id:focus-within {
+	border:none;
+	color:black;
+	
+}
+
+.member_id:hover {
+	cursor:default;
+	background-color: white;
+}
+
+.member_name {
+	border:none;
+	width:100%;
+	text-indent:0;
+	font-size: var(--font-medium);
+}
+
+.member_name:focus {
+	border:none;
+	cursor:default;
+	background-color: white;
+}
+
+.member_name:focus-within {
+	border:none;
+	color: black;
+}
+
+.member_name:hover {
+	cursor:default;
+	background-color: white;
+}
+
+.member_birth {
+	border:none;
+	width:100%;
+	text-indent:0;
+	font-size: var(--font-medium);
+}
+
+.member_birth:focus {
+	border:none;
+	cursor:default;
+	background-color: white;
+}
+
+.member_birth:focus-within {
+	border:none;
+	color: black;
+}
+
+.member_birth:hover {
+		cursor:default;
+	background-color: white;
+}
+
+#pwchk {
+	margin-right:0px;
+}
+
+
+
+
+#address {
+    width: 100%;
+}
+
+.city {
+	margin-right:0px;
+}
+
+.search {
+	margin-left:10px;
+
+}
+
+.search_address {
+	background-color:var(--primary-brown);
+	border-radius:15px;
+	padding:5px 10px 5px 10px;
+	
+	color:white;
+	font-size:13px;
+}
+
+.search_address:hover {
+	transition:.5s;
+	background-color:var(--secondary-orange);
+}
+
+#modifyBtn {
+    border: none;
+    border-radius:30px;
+    width: 250px;
+    height: 40px;
+    font-weight: bold;
+    background-color: var(--primary-brown);
+    color: white;
+    
+  
+  }
+
+
+
+#modifyBtn:hover {
+    transition: .2s;
+    background-color: var(--secondary-orange);
+    color: white;
+    font-weight: bold;
+}
+
+::placeholder {
+	text-indent:10px;
+    color: rgb(209, 209, 209);
+    font-family: "S-CoreDream-3light";
+    font-size: var(--font-small);
+   
+    
+}
+
+::-webkit-scrollbar {
+    color: transparent;
+}
+
+
+.svrmsg {
+		color:red;
+	font-size:13px;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	margin-top:30px;
+}
+
+
+@media screen and (max-width: 768px) {
+		.body {
+		flex-direction: column;
+	}
+
+	
+	.main {
+		width:100%;
+		
+	
+	}
+	
+	#modifyForm {
+	 display:flex;
+	 width:100%;
+		flex-direction:column;
+		justify-content:center;
+		align-items:center;
+	}
+	
+	.address_input {
+		display:flex;
+		flex-direction:column;
+	}
+	
+}
+
+
+
+

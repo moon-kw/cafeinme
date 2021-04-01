@@ -1,0 +1,136 @@
+
+
+.container {
+    display: flex;
+    max-width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--background-otmeal);
+}
+
+#section {
+    width: 800px;
+  height: 500px;
+  margin: auto;
+  margin-top:150px;
+  display: flex;
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 2px 8px rgba(0,0,0,0.2);
+  background-color:var(--white-color);
+}
+
+.section_border {
+  width: 750px;
+  height: 450px;
+  margin: auto;
+  display: flex;
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:var(--white-color);
+  border: 1px solid rgba(182, 160, 143, 50%);
+}
+
+.section_border > a > img {
+  width: 200px;
+  margin: 20px;
+  margin-bottom:40px;
+}
+
+
+
+h3 {
+    text-align: center;
+    padding: var(--padding);
+    font-size: var(--font-large);
+    font-weight: bold;
+}
+
+.findId_list {
+	display:flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items:center;
+ 
+    width: 100%;
+}
+
+.findId_list input {
+  border-radius: var(--small-tab);
+  border: 1px solid var(--grey-light-color);
+  text-indent:10px;
+  height:32px;
+  width:200px;
+  font-size:12px;
+ 
+}
+
+.findId_list input:focus {
+	background-color: var(--grey-light-color);
+}
+
+.findId_list .name {
+	margin-bottom:5px;
+}
+
+.findId_list .tel {
+	margin-bottom:15px;
+}
+
+
+
+::placeholder {
+    text-indent:10px;
+	font-size:12px;
+  }
+
+.submenu {
+   margin-top:20px;
+	font-size:12px;
+	margin-bottom:20px;
+}
+
+.submenu a {
+	font-size: var(--font-medium);
+	padding:10px;
+}
+
+.submenu a:hover {
+	color: var(--secondary-orange);
+	transition:.5s;
+}
+
+
+.findedId {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size:12px;
+    color:red;
+    margin-bottom:5px;
+}
+
+#findIDBtn {
+	 height:32px;
+  width:200px;
+  border-radius: var(--small-tab);
+  cursor: pointer;
+  border: 1px solid var(--secondary-orange);
+  color: var(--secondary-orange);
+  margin-bottom:10px;
+  letter-spacing:2px;
+  font-size:12px;
+}
+
+#findIDBtn:hover {
+  border: none;
+  background-color: var(--primary-brown-light);
+  color: white;
+  transition: all 100ms ease-in;
+}
+

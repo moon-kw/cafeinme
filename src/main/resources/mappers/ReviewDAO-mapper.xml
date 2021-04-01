@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.ReviewDAO-mapper">
+	
+	<!-- 리뷰 등록 -->
+	<insert id="registReview" parameterType="ReviewVO">
+		insert into reviews 
+			(REVIEW_NO,
+			REVIEW_NICKNAME, 
+			REVIEW_ITEMS, 
+			REVIEW_CONTENT, 
+			REVIEW_STAR, 
+			REVIEW_DATE, 
+			REVIEW_CMT, 
+			MEMBER_ID, 
+			CAFE_NO,
+			ORDER_NO) 
+		values 
+			(reviews_review_no_seq.nextval,
+			#{REVIEW_NICKNAME},
+			#{REVIEW_ITEMS},
+			#{REVIEW_CONTENT},
+			#{REVIEW_STAR},
+			systimestamp,
+			0,
+			#{MEMBER_ID},
+			#{CAFE_NO},
+			#{ORDER_NO}
+			)
+		<selectKey keyProperty="REVIEW_NO" keyColumn="REVIEW_NO" resultType="long" order="AFTER">
+			select reviews_review_no_seq.currval from dual
+		</selectKey>
+	</insert>
+	
+	<select id="isReviewByReviewNO" parameterType="long" resultType="int">
+		select count(*) from reviews
+		where review_no = #{review_no}
+	</select>
+	
+	<!-- 주문테이블 리뷰등록여부 값 변경 -->
+	<update id="changeOrderReviewYN" parameterType="hashmap">
+		update orders
+			set ORDER_REVIEW_YN = #{review_yn}
+			where order_no = #{order_no}
+	</update>
+	
+	<!-- 리뷰 조회(1개, 주문번호) -->
+	<select id="getOneReview" parameterType="int" resultType="ReviewVO">
+		select * from reviews
+			where order_no = #{order_no}
+	</select>
+	
+	<!-- 리뷰 수정 -->
+	<update id="modifyReview" parameterType="ReviewVO">
+		update reviews
+			set review_content = #{REVIEW_CONTENT},
+				review_star = #{REVIEW_STAR}
+			where order_no = #{ORDER_NO}
+	</update>
+	
+	<!-- 내 카페리뷰 보기 -->
+	<select id="getneedwritereview" parameterType="hashmap" resultType="ReviewVO">
+		select * 
+		from( select  row_number() over (order by t1.review_no desc) as num ,
+		                t1.review_no,
+		                t1.review_nickname,
+		                t1.review_content,
+		                t1.review_star,
+		                t1.review_date,
+		                t1.review_cmt,
+		                t2.comment_no,
+		            NVL(t2.comment_content,'nocomment') as comment_content
+		            from reviews t1 LEFT OUTER JOIN comments t2 on t2.review_no = t1.review_no 
+		            where t1.cafe_no = #{cafe_no})
+		where num between #{startrec} and #{endrec}
+	</select>
+	
+	<!-- 댓글 등록 -->
+	<insert id="registComment" parameterType="CommentVO">
+		insert into comments
+			(comment_no,
+			comment_content,
+			cafe_no,
+			review_no)
+		values
+			(comments_comment_no_seq.nextval,
+			#{COMMENT_CONTENT},
+			#{CAFE_NO},
+			#{REVIEW_NO})
+		<selectKey keyProperty="COMMENT_NO" keyColumn="COMMENT_NO" resultType="long" order="AFTER">
+			select comments_comment_no_seq.currval from dual
+		</selectKey>
+	</insert>
+	
+	<!-- 리뷰 댓글 존재여부 변경 -->
+	<update id="changeReviewCmt" parameterType="hashmap">
+		update reviews
+			set review_cmt = #{cmt_yn}
+		where review_no = #{review_no}
+	</update>
+	
+	<!-- 댓글 수정 -->
+	<update id="modifyComment" parameterType="hashmap">
+		update comments
+			set comment_content = #{comment_content}
+		where comment_no = #{comment_no}
+	</update>
+	
+	<!-- 댓글 1개 가져오기(댓글번호) -->
+	<select id="getOneComment" parameterType="long" resultType="CommentVO">
+		select * from comments
+		where comment_no = #{comment_no}
+	</select>
+	
+	<!-- 댓글 존재여부 확인 -->
+	<select id="isCommentByCommentNO" parameterType="long" resultType="int">
+		select count(*) from comments
+		where comment_no = #{comment_no}
+	</select>
+</mapper>

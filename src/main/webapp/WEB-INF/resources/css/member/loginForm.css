@@ -1,0 +1,203 @@
+@charset "UTF-8";
+
+* {
+   /* outline: 1px dashed red; */
+}
+
+.container {
+	
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	
+	margin: auto;
+	max-width:100%;
+	height:100vh;
+  background-color:var(--background-otmeal);
+}
+
+.contents {
+  width: 800px;
+  height: 500px;
+  margin: auto;
+  margin-top:150px;
+  display: flex;
+   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 2px 8px rgba(0,0,0,0.2);
+  background-color:var(--white-color);
+  
+ 
+}
+
+.contents_border {
+ width: 750px;
+  height: 450px;
+  margin: auto;
+  display: flex;
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:var(--white-color);
+  border: 1px solid rgba(182, 160, 143, 50%);
+}
+
+.contents_border > a > img {
+  width: 200px;
+  margin: 20px;
+  margin-bottom:40px;
+}
+
+
+
+#loginForm {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.body {
+	width:100%;
+	height:100px;
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content:center;
+}
+
+.title {
+  text-align: center;
+  font-size: var(--font-large);
+}
+
+.login {
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	
+	height:100%;
+	width:fit-content
+}
+
+.text {
+	display:flex;
+	flex-direction:column;
+	margin: 0px;
+	padding:0px;
+	width:fit-content;
+	height:fit-content;
+	box-sizing:border-box;
+}
+
+
+.item label {
+	width:60px;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  padding: var(--padding);
+  padding-bottom:0px;
+  padding-top:0px;
+  font-size: var(--font-medium);
+}
+
+.item input {
+  border-radius: var(--small-tab);
+  border: 1px solid var(--grey-light-color);
+  text-indent:10px;
+  height:32px;
+  margin-bottom:5px;
+  width:200px;
+  font-size: 12px;
+  
+  
+}
+
+.item input:focus {
+  background-color: var(--grey-light-color);
+}
+
+/*로그인 버튼*/
+
+.loginBtn {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	margin-left:10px;
+	height:100%;
+}
+
+#loginBtn {
+  width:100px;
+  height:73px;
+  border-radius: var(--small-tab);
+  cursor: pointer;
+  border: 1px solid var(--secondary-orange);
+  color: var(--secondary-orange);
+  margin-bottom:10px;
+  letter-spacing:2px;
+  font-size:12px;
+
+
+}
+
+#loginBtn:hover {
+  border: none;
+  background-color: var(--primary-brown-light);
+  color: white;
+  transition: all 100ms ease-in;
+}
+
+.find_info {
+	margin-top:20px;
+	font-size:12px;
+	margin-bottom:20px;
+}
+
+.find_info a {
+	font-size: var(--font-medium);
+	padding:10px;
+}
+
+.find_info a:hover {
+	color: var(--secondary-orange);
+	transition:.5s;
+}
+
+.svr_msg {
+	color:red;
+	font-size:13px;
+	margin-left:10px;
+}
+
+.errmsg {
+	
+	color:red;
+	font-size:13px;
+	margin-left:10px;
+}
+
+
+
+::placeholder {
+	text-indent:10px;
+	font-size:12px;
+}
+
+@media screen and (max-width: 768px) { 
+  
+  #loginForm {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+}

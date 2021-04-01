@@ -1,0 +1,15 @@
+.pageBtn .pageBtn-ul{
+    list-style: none;
+}
+  
+.pageBtn .pageBtn-ul li{
+    float: left;
+}
+  
+.page-item:hover{
+    cursor: pointer;
+}
+  
+.page-item.active{
+    background-color: orange;
+}

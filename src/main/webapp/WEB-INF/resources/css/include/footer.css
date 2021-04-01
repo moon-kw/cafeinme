@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+/*footer*/
+
+#footer {
+  width: 100%;
+  background-color: var(--primary-brown-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: var(--font-medium);
+  color: white;
+  padding: calc(var(--padding)*3);
+}
+
+#footer img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.footer-menu {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+
+.footer-info {
+  display: flex;
+  width: 30%;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+
+.contactBtn {
+  color: white;
+  cursor: pointer;
+}
+
+hr {
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid var(--secondary-orange-light);
+  margin-bottom: 10px;
+}
+
+/*푸터 끝*/
+
+
+@media screen and (max-width: 768px) { 
+  
+  
+  #footer {
+    margin-top: 100px;
+  }
+
+  .footer-menu {
+    width: 80%;
+  }
+
+  .footer-info {
+    width: 60%;
+  }
+  
+
+
+}

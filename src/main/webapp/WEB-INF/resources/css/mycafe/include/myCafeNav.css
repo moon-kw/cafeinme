@@ -1,0 +1,105 @@
+* {
+  /* outline: 1px dashed red; */
+}
+
+h4 {
+	margin-bottom: 0;
+}
+
+#cafeNav {
+  height: 100vh;
+  width: 300px;
+  padding: var(--padding) 20px;
+  /* padding: var(--padding); */
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--grey-light-color);
+  border-left: 1px solid var(--grey-light-color);
+  position: relative;
+}
+
+.mycafe-gnb {
+  font-size: var(--font-medium);
+  font-weight: bold;
+  padding-top: calc(var(--padding)*1.5);
+}
+
+.mycafe-group-cafe,
+.mycafe-group-shop {
+  padding: var(--padding) 0px;
+}
+
+.mycafe-group-cafe {
+	margin-bottom: 10px;
+}
+
+.mycafe-lnb {
+  font-size: var(--font-medium);
+  padding: calc(var(--padding)*0.5) 0;
+  border-radius: var(--medium-tab);
+}
+
+.mycafe-lnb > a {
+  padding: 5px var(--padding);
+}
+
+.mycafe-lnb:hover {
+  background-color: var(--primary-brown-dark);
+  color: white;
+  transition: all 100ms ease-in;
+}
+
+.mycafe-group-cafe {
+  border-bottom: 1px solid var(--grey-light-color);
+}
+
+#cafeNav_toggleBtn {
+  position: absolute;
+  padding: calc(var(--padding)*0.5) var(--padding) var(--padding) var(--padding);
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+
+@media screen and (max-width: 768px) { 
+
+  #cafeNav_toggleBtn{
+    display: block;
+  }
+
+  .navContainer {
+    position: absolute;
+    width: 100%;
+    height: 55px;
+    overflow: hidden;
+    z-index: 5;
+  }
+  
+  #cafeNav {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: var(--white-color);
+  }
+
+  #cafeNav_toggleBtn.active {
+    transform: rotate(180deg);
+  }
+
+  .navContainer.active {
+    height: 80%;
+    
+  }
+  
+  .mycafe-gnb {
+  	text-align: center;
+  	padding: var(--padding);
+  	}
+  
+  .mycafe-lnb {
+  	text-align: center;
+  }
+
+}

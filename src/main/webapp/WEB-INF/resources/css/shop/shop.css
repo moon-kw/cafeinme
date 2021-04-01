@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+#shopSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+
+}
+
+.container {
+  display: flex;
+  background-color: white;
+  width: 80%;
+  flex-direction: column;
+  border-radius: var(--small-tab);
+}
+
+.page_title {
+  text-align: center;
+  font-size: calc(var(--font-big)*2);
+  color: var(--grey-dark-color);
+  font-family: "S-CoreDream-4Regular";
+  margin: 30px;
+  margin-top: 50px;
+  padding: var(--padding);
+  border-bottom: 1px solid var(--grey-light-color);
+}
+
+.shop_list {
+  margin: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.shop_list_item {
+  width: 200px;
+  height: 230px;
+  margin: 20px;
+  /* outline: 10px solid blue; */
+}
+
+.shop_list_item > a {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.shop_list_item > a:hover .shop_address{
+  opacity: 0.8;
+}
+
+.shop_list_item > a > img {
+  width: 200px;
+  height: 200px;
+}
+
+.shop_list_item > a >.shop_name {
+  margin: 5px;
+  text-align: center;
+}
+
+.shop_address {
+  position: absolute;
+  text-align: center;
+  font-size: var(--font-small);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 88%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: black;
+  transition: all 100ms ease-in;
+}
+
+table {
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ 
+}
+
+@media screen and (max-width: 768px) { 
+  
+  .shop_list {
+    justify-content: center;
+  }
+
+
+}

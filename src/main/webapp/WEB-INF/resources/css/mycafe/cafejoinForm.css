@@ -1,0 +1,415 @@
+@charset "UTF-8";
+
+* {
+    /* outline: 1px solid red; */
+  }
+  
+ #mypage {
+   	height: 100%;
+   	background-color:white;
+    
+ }
+  
+.body {
+	display:flex;
+	flex-direction: row;
+	width:100%;
+	
+	background-color:var( --background-otmeal);
+}
+
+.main {
+	height:100%;
+	width:50%;
+	 min-width:617px;
+	margin: auto;
+	padding: 50px;
+	background-color:white;
+}
+  
+.title {
+	font-family: "S-CoreDream-6Bold";
+	font-size:25px;
+}
+
+.subtitle {
+	font-family: "S-CoreDream-4Regular";
+	font-size:15px;
+}
+
+ .cafejoinform_ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin-top: 30px;
+  }
+ 
+
+label {
+    padding: top 16dp, bottom 8dp;
+    font-family: "S-CoreDream-3light";
+  }
+label:hover {
+    color:rgb(204, 133, 97) ;
+  }
+
+input {
+    width: 250px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: transparent;
+    border-bottom: 1px solid var(--primary-brown);
+    
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 2px solid var(--secondary-orange);
+ }
+ 
+.infobind:focus-within {
+	color: var(--secondary-orange);
+}
+
+  .infotop {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .infomiddle{
+    margin-bottom: 20px;
+  }
+
+  .infolow{
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .infobottom{
+    display: flex;
+    margin-bottom:20px;
+  }
+
+
+ 
+  #cafe_address1 {
+    width: 510px;
+  }
+
+  #cafe_content {
+    width: 510px;
+  }
+
+  #cfile {
+    border: none;
+  }
+  
+
+
+#searchbts {
+  margin-top: 20px;
+  border: none;
+  width: 250px;
+  height: 40px;
+  font-weight: bold;
+  background-color: var(--primary-brown);
+  color: white;
+  border-radius: 30px;
+}
+
+#searchbts:hover {
+  transition: .5s;
+  background-color: var(--secondary-orange);
+  color: white;
+  font-weight: bold;
+}
+
+#submitbts {
+  
+  margin-top: 20px;
+  border: none;
+  width: 250px;
+  height: 40px;
+  font-weight: bold;
+  background-color: var(--primary-brown);
+  color: white;
+  border-radius: 30px;
+	
+}
+
+#submitbts:hover {
+	  transition: .5s;
+  background-color: var(--secondary-orange);
+  color: white;
+  font-weight: bold;
+}
+
+::placeholder {
+  
+  color: rgb(209, 209, 209);
+  font-family: "S-CoreDream-4Regular";
+}
+
+textarea {
+  margin-top: 10px;
+  resize: none;
+  border: none;
+  border-left: 3px solid var(--primary-brown);
+  padding-left: 10px ;
+  font-family:"S-CoreDream-4Regular";
+}
+
+textarea:focus {
+  outline: none;
+  border: none;
+  border-left: 3px solid var(--secondary-orange);
+  padding-left: 10px ;
+}
+
+
+
+/* ▼ㅁ태그박스 -------------------------------------------------------------------------------- */
+
+.tagbox {
+    background-color: transparent;
+    margin-top: 20px;
+    margin-bottom:20px;
+    outline: 1px dashed rgb(212,212,212);
+    width: 100%;
+    height: 200px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+    white-space: wrap;
+
+    padding: 20px;
+
+}
+
+.checks {
+    margin: auto 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    white-space: nowrap;
+    font-size: 12px;
+
+
+}
+
+.checks input[type="checkbox"] {  /* 실제 체크박스는 화면에서 숨김 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0
+}
+.checks input[type="checkbox"] + label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.checks input[type="checkbox"] + label:before {  /* 가짜 체크박스 */
+  content: ' ';
+  display: inline-block;
+  width: 14px;  /* 체크박스의 너비를 지정 */
+  height: 14px;  /* 체크박스의 높이를 지정 */
+  line-height: 14px; /* 세로정렬을 위해 높이값과 일치 */
+  margin: -2px 8px 0 0;
+  text-align: center; 
+  vertical-align: middle;
+  background: #fafafa;
+  border: 1px solid #cacece;
+  border-radius : 3px;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+}
+.checks input[type="checkbox"] + label:active:before,
+.checks input[type="checkbox"]:checked + label:active:before {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.checks input[type="checkbox"]:checked + label:before {  /* 체크박스를 체크했을때 */ 
+  content: '\2714';  /* 체크표시 유니코드 사용 */
+  color: #99a1a7;
+  text-shadow: 1px 1px #fff;
+  background: #e9ecee;
+  border-color: #adb8c0;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+}
+
+.checks.small input[type="checkbox"] + label {
+  font-size: 12px;
+}
+
+.checks.small input[type="checkbox"] + label:before {
+  width: 17px;
+  height: 17px;
+  line-height: 17px;
+  font-size: 11px;
+}
+
+.checks.etrans input[type="checkbox"] + label {
+  padding-left: 30px;
+}
+.checks.etrans input[type="checkbox"] + label:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 0;
+  opacity: .6;
+  box-shadow: none;
+  border-color: #8c7b6e;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+.checks.etrans input[type="checkbox"]:checked + label:before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity:1; 
+  background: transparent;
+  border-color:transparent #cc8561 #cc8561 transparent;
+  border-top-color:transparent;
+  border-left-color:transparent;
+  -ms-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+  transform:rotate(45deg);
+  
+}
+
+.no-csstransforms .checks.etrans input[type="checkbox"]:checked + label:before {
+  /*content:"\2713";*/
+  content: "\2714";
+  top: 0;
+  left: 0;
+  width: 21px;
+  line-height: 21px;
+  color: #6cc0e5;
+  text-align: center;
+  border: 1px solid #6cc0e5;
+  
+}
+
+input[type="checkbox"]:checked + label {
+	color:var(--secondary-orange);
+}
+
+/* ▲태그박스 --------------------------------------------------------------------------------------------------------------- */
+
+#submitbts {
+  margin-top: 40px;
+  border: none;
+  width: 250px;
+  height: 40px;
+  font-weight: bold;
+  background-color: var(--primary-brown);
+  color: white;
+  border-radius: 30px;
+}
+
+#submitbts:hover {
+  transition: .5s;
+  background-color: var(--secondary-orange);
+  color: white;
+  font-weight: bold;
+}
+
+.imported_files {
+	display:flex;
+	flex-direction:row;
+	align-items : center;
+	width:100%;
+	height:80px;
+	border: 1px solid rgba(212,212,212,50%);
+	
+}
+
+.imported_files > .box {
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content:center;
+	width:60px;
+	height:60px;
+	background-color:rgba(212,212,212,50%);
+	margin:10px;
+	cursor:pointer;
+}
+
+.imported_files > .box:hover {
+	transition:.5s;
+	transform: scale(1.2);
+}
+
+.imported_files > .box > img {
+	width:100%;
+	height:100%;
+}
+.imported_files > .wrapper >.box {
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content:center;
+	width:60px;
+	height:60px;
+	background-color:rgba(212,212,212,50%);
+	margin:10px;
+	cursor:pointer;
+}
+.imported_files > .wrapper{
+	display:flex;
+}
+.imported_files > .wrapper > .box:hover {
+	transition:.5s;
+	transform: scale(1.2);
+}
+
+.imported_files > .wrapper> .box > img {
+	width:100%;
+	height:100%;
+}
+
+.imported_files > .box > .addimg {
+	width:40%;
+	height:40%;
+	opacity:50%;
+}
+
+.imported_files > .box > .addimg:hover {
+	transition:.5s;
+	opacity:100%;
+	
+}
+.hiddenfile{
+	display:none;
+}
+
+::-webkit-scrollbar {
+  color: transparent;
+}
+
+
+@media screen and (max-width: 768px) {
+	.body {
+	flex-direction: column;
+	}
+
+	
+	.main {
+		width:100%;
+		
+	
+	}
+	
+}

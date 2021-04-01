@@ -1,0 +1,101 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "S-CoreDream-3Light";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "S-CoreDream-4Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "S-CoreDream-6Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /*Color*/
+  --white-color: #fff;
+  --black-color: #140a00;
+  --blue-color: #045fd4;
+  --red-color: #ff0000;
+  --background-otmeal: #f4f3f0;
+  --background-main: #f1efed;
+  --grey-dark-color: #555;
+  --grey-light-color: #e0e0e0;
+  --primary-brown: #8c7b6e;
+  --primary-brown-light: #b6a08f;
+  --primary-brown-dark: #4a4037;
+  --secondary-orange: #cc8561;
+  --secondary-orange-light: #ddc9be;
+  --primary-blue: #557598;
+  --primary-blue-main: #344960;
+
+  /*Size*/
+  --padding: 10px;
+
+  /*Font size*/
+  --font-great: 48px;
+  --font-big: 24px;
+  --font-large: 18px;
+  --font-medium: 16px;
+  --font-small: 12px;
+  --font-micro: 10px;
+
+  /*[tab] border-radius*/
+  --big-tab: 30px;
+  --medium-tab: 10px;
+  --small-tab: 5px;
+}
+
+* {
+  font-family: "S-CoreDream-4Regular";
+  font-size: font(--font-medium);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+	outline: none;
+}
+
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
+
+button {
+  background-color: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: none;
+}
+
+@media screen and (max-width: 768px) { 
+  
+  
+
+
+}

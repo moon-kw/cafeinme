@@ -1,0 +1,117 @@
+@charset "UTF-8";
+* {
+  /* outline: 1px solid red; */
+}
+
+/*현재 위치*/
+.pageTitle {
+  font-size: var(--font-medium);
+  border-bottom: 1px solid var(--grey-light-color);
+  padding: calc(var(--padding)*2);
+}
+
+.now {
+  font-weight: bold;
+}
+
+/*nav, form 모두 담은 컨테이너*/
+.main-container {
+  display: flex;
+}
+
+
+/*section of form*/
+
+#sjArticle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container {
+  justify-content: center;
+  width: 90%;
+  margin: 10px;
+}
+
+
+.title {
+  padding: var(--padding);
+  text-align: center;
+  font-size: var(--font-big);
+  font-family: "S-CoreDream-6Bold";
+  margin-top: 20px;
+}
+
+#myShopJoinForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+/*이미지*/
+.img-group {
+  display: flex;
+  padding: var(--padding);
+  justify-content: center;
+}
+
+.sjimg {
+  width: 200px;
+  height: 250px;
+  border: 2px solid var(--primary-brown-dark);
+  border-radius: var(--medium-tab);
+  border-top: 30px solid var(--primary-brown-dark);
+  background-size: contain;
+  background-repeat: none;
+  background-position-x: center;
+  background-position-y: center;
+  margin: 10px 30px 30px 30px;
+}
+
+.img_1 {
+  background-image: url("../../../img/img_myCafe/shop_img1.jpg");
+}
+
+.img_2 {
+  background-image: url("../../../img/img_myCafe/shop_img2.jpg");
+}
+
+.img_3 {
+  background-image: url("../../../img/img_myCafe/shop_img3.jpg");
+}
+
+
+.joinBtn {
+  width: 180px;
+  height: 50px;
+  border-radius: var(--medium-tab);
+  font-size: var(--font-medium);
+  cursor: pointer;
+  background-color: var(--grey-light-color);
+  color: var(--white-color);
+  margin-bottom: 30px;
+}
+
+.joinBtn.active {
+  background-color: var(--primary-brown-dark);
+  color: var(--white-color);
+  transition: all 100ms ease-in;
+}
+
+
+
+@media screen and (max-width: 768px) { 
+  
+  .img-group {
+    flex-direction: column;
+  }
+
+
+	#sjArticle {
+	  margin-top:  30px;
+	}
+
+}

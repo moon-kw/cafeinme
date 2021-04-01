@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+#mypage {
+   	height: 100%;
+    
+}
+
+
+.body {
+	display:flex;
+	flex-direction: row;
+	width:100%;
+	height:100%;
+	background-color:var( --background-otmeal);
+}
+
+.main {
+    width: 50%;
+    min-width: 617px;
+    margin: 0 auto;
+    padding: 50px;
+    padding-bottom: 215px;
+    background-color: white;
+}
+
+.title {
+	font-family: "S-CoreDream-6Bold";
+	font-size:25px;
+}
+
+.subtitle {
+	font-family: "S-CoreDream-4Regular";
+	font-size:15px;
+}
+
+#changePWForm {
+	height:100%;
+	position:relative;
+	margin:auto;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	width:fit-content;
+}
+
+label {
+	margin-bottom:10px;
+}
+
+input {
+	border:1px solid rgb(212,212,212);
+	border-radius:5px;
+}
+
+input {
+    width: 250px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: 1px solid rgb(212,212,212);
+    border-radius:5px;
+    text-indent:10px;
+    font-size:13px;
+    
+}
+
+input:focus {
+   outline: none;
+   background-color:rgb(240,240,240);
+}
+
+#text:focus-within {
+	color: var(--secondary-orange);
+}
+
+.current_pw {
+	
+	display:flex;
+	flex-direction:column;
+}
+
+.pwchk_bind {
+	margin-top:20px;
+	display:flex;
+	flex-direction:row;
+}
+
+.next_pw {
+	display:flex;
+	flex-direction:column;
+	margin-right:5px;
+}
+
+.next_pwchk {
+	display:flex;
+	flex-direction:column;
+	margin-left:5px;
+	
+}
+
+::placeholder {
+	text-indent:5px;
+	font-size:12px;
+}
+
+.button_bind {
+
+	width:100%;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+}
+
+.button_bind > li > button {
+	
+	margin-left:10px;
+	margin-right:10px;
+	margin-top:40px;
+	background-color: var(--primary-brown);
+	color:white;
+	border-radius: var(--small-tab);
+	padding:var(--padding);
+}
+
+.button_bind > li > button:hover {
+	transition:.3s;
+	background-color:var(--secondary-orange);
+}
+
+.svr_msg {
+    color: red;
+    font-size: 13px;
+    margin-top: 30px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+	
+	
+	.body {
+	position:relative;
+	flex-direction:column; }
+	
+	.main {
+		width:100%;
+	}
+	
+	#changePWForm {
+	 display:flex;
+	 width:100%;
+		flex-direction:column;
+	}
+	
+	.next_pwchk {
+	margin-top:2s0px;
+	margin-left:0px;
+	}
+	
+	.pwchk_bind {
+	display:flex;
+	flex-direction:column;}
+	
+	.address_input {
+		display:flex;
+		flex-direction:column;
+	}
+	
+}

@@ -1,0 +1,200 @@
+@charset "UTF-8";
+* {
+  /* outline: 1px dashed red; */
+}
+
+#mypage {
+   	height: 100%;
+    
+}
+
+.body {
+	display:flex;
+	flex-direction:row;
+
+	background-color:var(--background-otmeal);
+	
+	width:100%;
+}
+
+.main {
+	width:50%;
+	min-width:617px;
+	margin: auto;
+	padding: 50px;
+	background-color:white;
+}
+
+.title {
+	font-family: "S-CoreDream-6Bold";
+	font-size:25px;
+}
+
+.subtitle {
+	font-family: "S-CoreDream-4Regular";
+	font-size:15px;
+}
+
+/*layout*/
+.bookmarkSection {
+height:100vh;
+	width:100%;
+	margin: auto;
+	background-color:white;
+}
+
+.container {
+ padding:0;
+ 
+ 	transition:.3s;
+ 	
+   display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    
+  width: 100%;
+  height:fit-content;
+  background-color:white;
+}
+
+.bookmark_box {
+
+  width: 150px;
+  height:fit-content;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  border: 1px solid transparent;
+  margin-bottom:10px;
+  margin:10px;
+  margin-left:0px;
+}
+
+/*북마크아이템*/
+.bookmark_box_img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: var(--padding);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  
+  border-radius:5px;
+}
+
+.bookmark_box_img img {
+	width:100%;
+  object-fit: cover;
+  position:relative;
+  
+  border-radius:5px;
+}
+
+
+.bookmark_box_cafe {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  margin:0;
+}
+
+.cafe_name {
+	width:100%;
+	text-align:center;
+}
+
+.bookmark_box_cafe li:last-child {
+  margin: 5px 0px;
+}
+
+
+.cafe_name:hover {
+	transition:.3s;
+	color:var(--secondary-orange);
+}
+
+
+/*버튼*/
+.bookmark_box_btn {
+  width:130px;
+  height:130px;
+  margin:auto;
+  
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  
+  position:absolute;
+  z-index:1;
+ 
+ 
+  opacity:0%;
+  border-radius:5px;
+}
+
+
+.bookmark_box_btn:hover {
+	transition: .3s;
+	cursor:pointer;
+	opacity:100%;
+	background-color:rgba(0, 0, 0, 70%);
+}
+
+.bookmark_box_btn button {
+  font-size: var(--font-large);
+  background-color:transparent;
+  margin: 15px;
+}
+
+.copyBtn {
+  opactiy:100%;
+  color:white;
+}
+
+.copyBtn:hover {
+	transition:.3s;
+	opactiy:50%;
+	
+}
+
+.delBtn {
+	color:#fe7;
+	 text-shadow: 0px 0px 10px rgb(255, 186, 59), 0 0 20px rgb(255, 208, 0);
+}
+
+
+
+.delBtn:hover {
+	transition:.3s;
+	opactiy:100%;
+	color: rgb(212,212,212);
+	text-shadow: none;
+}
+
+@media screen and (max-width: 768px) {
+
+	
+	#mypage {
+		visibility:none;
+		display:none;
+	}
+	
+	.nav_body{
+		display:none;
+	}
+	
+	.main {
+		width:100%;
+		
+	
+	}
+	
+	
+}
+

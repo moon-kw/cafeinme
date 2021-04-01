@@ -1,0 +1,213 @@
+@charset "UTF-8";
+
+#myCafe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  
+  width:100%;
+  height:100%;
+  
+
+}
+
+
+.upper-title {
+	width:100%;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+
+	margin: 100px 0;
+}
+
+
+.upper-title > .logo_img > a > img {
+	width: 200px;
+
+}
+
+.upper-title > .hr {
+	border-bottom:1px solid var(--primary-brown-light);
+	width:320px;
+	margin-right:40px;
+	margin-left:40px;
+}
+
+
+.outer-container {
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.mycafe-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.mycafe-group h3 {
+  font-size: 20px;
+  margin-left:10px;
+  margin-bottom: 20px;
+}
+
+
+.inner-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cafeBox {
+  border: 3px solid var(--primary-brown);
+  border-radius:15px;
+  width: 250px;
+  height: 400px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.shopBox {
+	
+	  border: 3px solid var(--primary-brown-dark);
+  border-radius:15px;
+  width: 250px;
+  height: 400px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center;
+	
+}
+
+.cafeBox > .topcolor {
+	margin:0;
+	padding:0;
+	width:250px;
+	height:10%;
+	background-color: var(--primary-brown);
+	border-radius: 15px 15px 0 0;
+}
+
+
+.shopBox > .topcolor {
+    margin:0;
+	padding:0;
+	width:250px;
+	height:10%;
+	background-color: var(--primary-brown-dark);
+	border-radius: 15px 15px 0 0;
+	
+}
+
+
+.cafeBox h4,
+.shopBox h4 {
+  color:white;
+  font-size: var(--font-medium);
+  width:100%;
+  height:100%;
+  text-align: center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.cafeBox > a  {
+	height:100%;
+	width:100%;
+}
+
+.shopBox > a {
+	height:100%;
+	width:100%;
+}
+
+.box_content {
+	display:flex;
+	flex-direction:column;
+	justify-content: space-evenly;
+	align-items:center;
+	padding:20px;
+	height:100%;
+	width:100%;
+	background-color:white;
+	
+	border-radius: 0 0 15px 15px;
+}
+
+.cafeBox > a > .box_content:hover {
+	
+	transition:.5s;
+	background-color: rgba(182, 160, 143, 20%);
+	cursor: pointer;
+	
+}
+
+
+.shopBox > a > .box_content:hover {
+	
+	transition:.5s;
+	background-color:rgba(74, 64, 55, 20%);
+	color:white;
+	cursor: pointer;
+	
+}
+
+.box_content > .box_content_detail {
+	
+	color:gray;
+	font-weight:bold;
+	font-size:12px;
+	
+}
+
+
+
+.box_content > img {
+	width:100px;
+	height:100px;
+}
+
+.btnBox {
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+
+
+.moveBtn {
+	 width: 80px;
+  height: 30px;
+  cursor: pointer;
+  border: 1px solid var(--primary-brown-light);
+  border-radius: 10px;
+  color: var(--grey-dark-color);
+  font-size: var(--font-medium);
+}
+
+.moveBtn:hover {
+  background-color: var(--primary-brown-light);
+  color: white;
+  transition: all 100ms ease-in;
+}
+
+@media screen and (max-width: 768px) { 
+  
+  .inner-container {
+    
+  }
+
+
+}

@@ -1,0 +1,273 @@
+@charset "UTF-8";
+
+
+
+.body {
+    margin: auto;
+    margin-top: 40px;
+    background-color: white;
+    width: 80%;
+    height: 100%;
+    padding: 20px;
+    border: 1px solid var(--secondary-orange);
+    margin-bottom: 40px;
+}
+
+.top {
+    color: gray;
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.title {
+    color: var(--secondary-orange);
+}
+
+.subtitle {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.hr {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    border-bottom: 1px dashed var(--secondary-orange);
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/*주문상세내역*/
+
+
+.OrderDetailSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: var(--padding);
+}
+
+.detail-title {
+	text-align: center;
+	color: var(--secondary-orange);
+	margin-bottom: 10px;
+}
+
+.inner-container {
+  width: 100%;
+  padding: var(--padding);
+  border: 1px solid rgb(212, 212, 212);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+
+/*주문내용*/
+.order_info {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid rgb(212, 212, 212);
+  padding: calc(var(--padding)*3) 0px;
+}
+
+
+
+
+/*주문 카페 정보*/
+.order_info {
+  text-align: center;
+  display: flex;
+}
+
+.order_cafe {
+  display: flex;
+  flex-direction: column;
+}
+
+.order_cafe img {
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  margin: 10px;
+}
+
+
+/*주문 상세 내용*/
+.order_menu {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.order_detail {
+  width: 100%;
+}
+
+.order_detail li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding);
+}
+
+.order_detail li label {
+  font-size: var(--font-small);
+}
+
+.order_detail li input {
+  border: none;
+  background-color: none;
+  border-bottom: 1px solid var(--secondary-orange-light);
+  font-size: var(--font-medium);
+  text-align: right;
+  width: 40%;
+}
+
+
+.order_menu_detail li{
+	display: flex;
+	flex-direction: row;
+}
+
+.order_menu_detail li span {
+	margin-right: 13px;
+}
+
+
+.oc_info {
+	width: 300px;
+}
+
+.oc_info li{
+	width: 100%;
+	display: flex;
+	justify-content: space-between; 
+}
+
+.oc_info li input {
+	text-align: right;
+	width: 100px;
+	border: none;
+  border-bottom: 1px solid var(--secondary-orange-light);
+}
+
+/*메인버튼*/
+.reviewBtn {
+  width: 150px;
+  height: 40px;
+  background-color: var(--primary-brown-dark);
+  color: white;
+  border-radius: var(--big-tab);
+  cursor: pointer;
+  margin: 25px 0px 20px 0px;
+}
+
+.reviewBtn:hover {
+  transition: 100ms;
+  background-color: var(--secondary-orange);
+}
+
+.reviewBtn:focus {
+  outline: none;
+}
+
+
+/*목록보기 버튼*/
+.listBox {
+  align-self: flex-end;
+  width: 80px;
+  height: 30px;
+  margin: 15px 0px;
+}
+
+.listBtn {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: var(--grey-light-color);
+  border-radius: var(--small-tab);
+  font-size: var(--font-small);
+  
+}
+
+.listBtn:hover{
+  transition: 100ms;
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+}
+
+.listBtn:focus {
+  outline: none;
+}
+
+
+
+
+@media screen and (max-width: 768px) { 
+	
+	.body {
+		width: 100%;
+	}
+  
+  .container {
+    width:  100%;
+  }
+
+
+  .order_cafe img {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    margin: 5px;
+  }
+
+  .order_info {
+    flex-direction: column;
+    align-items: center;
+    padding: calc(var(--padding)*3);
+  }
+
+  .order_info li {
+    padding: var(--padding);
+  }
+
+  .order_menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .oc_info {
+	width: 80%;
+}
+
+}

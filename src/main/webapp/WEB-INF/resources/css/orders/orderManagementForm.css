@@ -1,0 +1,210 @@
+@charset "UTF-8";
+
+* {
+   /*outline: 1px dashed grey;*/
+}
+
+/*현재 위치*/
+.pageTitle {
+  font-size: var(--font-medium);
+  border: 1px solid var(--grey-light-color);
+  padding: calc(var(--padding)*2);
+}
+
+.now {
+  font-weight: bold;
+}
+
+/*nav, form 모두 담은 컨테이너*/
+.main-container {
+  display: flex;
+}
+
+.statusArticle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container {
+  justify-content: center;
+  width: 90%;
+  margin: 10px;
+}
+
+
+.title {
+  padding: var(--padding);
+  text-align: center;
+  font-size: var(--font-big);
+  font-family: "S-CoreDream-6Bold";
+  margin-top: 20px;
+}
+
+
+.description {
+  font-size: var(--font-large);
+  font-family: "S-CoreDream-4Regular";
+  color: var(--grey-dark-color);
+  padding: 0px 0px var(--padding) 0px;
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.nav-pills {
+  margin-top: 20px;
+}
+
+.tab-item {
+  width: 120px;
+  
+}
+
+.tab-item > button {
+  width: 100%;
+}
+
+.waitTab,
+.acceptTab,
+.completeTab {
+  display: flex;
+  align-items: center;
+  border-radius: var(--medium-tab);
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 1px solid var(--grey-light-color);
+}
+
+.waitTab:hover,
+.acceptTab:hover {
+	transition: all 100ms ease-in;
+	background-color: var(--grey-light-color);
+}
+
+.waitTab_orderInfo,
+.acceptTab_orderInfo,
+.completeTab_orderInfo {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.waitTab_orderMenu,
+.acceptTab_orderMenu,
+.completeTab_orderMenu {
+  width: 40%;
+}
+
+.waitTab_buttons
+.acceptTab_buttons
+.completeTab_buttons {
+  display: flex;
+  width: 20%;
+  justify-content: center;
+}
+
+.completeTab_orderInfo > .orderResult {
+  width: 80px;
+  height: 80px;
+  background-color: var(--grey-light-color);
+  padding: var(--padding);
+  line-height: 60px;
+  border-radius: 60px;
+  margin: 5px;
+}
+
+.menu_count {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+
+.okBtn, .noBtn,
+.completeBtn {
+  width: 60px;
+  height: 60px;
+  background-color: var(--grey-dark-color);
+  border-radius: var(--small-tab);
+  color: white;
+}
+
+
+.okBtn:hover , .noBtn:hover ,
+.completeBtn:hover , .refuseBtn:hover {
+  	color: white;
+  	transition: all 100ms ease-in;
+	background-color: var(--primary-blue-main);
+}
+
+.nav-link.active {
+	background-color: var(--primary-blue) !important;
+}
+
+
+.nav-pills {
+	padding-bottom: 5px;
+	border-bottom: 1px solid var(--grey-dark-color);
+}
+
+
+
+@media screen and (max-width: 768px) {  
+  * {
+    font-size: var(--font-medium);
+  }
+
+  .container {
+    margin-top: 50px;
+  }
+
+  #okBtn, #noBtn, #billsBtn,
+  #completeBtn {
+    width: 40px;
+    height: 40px;
+    background-color: var(--grey-dark-color);
+    color: white;
+  }
+
+  .orderResult {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+  }
+	
+	#waitTab, #acceptTab, #completeTab {
+		display: flex;
+		flex-direction: column;
+		height: 320px;
+	}
+	
+	.waitTab_orderInfo,
+	.acceptTab_orderInfo,
+	.completeTab_orderInfo {
+	  width: 60%;
+	}
+	
+	.waitTab_orderMenu,
+	.acceptTab_orderMenu,
+	.completeTab_orderMenu {
+	  width: 60%;
+	  justify-content: center;
+	  text-align: center;
+	}
+	
+	.waitTab_buttons
+	.acceptTab_buttons
+	.completeTab_buttons {
+	  display: flex;
+	  width: 60%;
+	  justify-content: center;
+	}
+
+}

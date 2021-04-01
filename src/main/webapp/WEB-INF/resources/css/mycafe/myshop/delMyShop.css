@@ -1,0 +1,110 @@
+
+* {
+  /* outline: 1px dashed red; */
+}
+
+/*현재 위치*/
+.pageTitle {
+  font-size: var(--font-medium);
+  border-bottom: 1px solid var(--grey-light-color);
+  padding: calc(var(--padding)*2);
+}
+
+.now {
+  font-weight: bold;
+}
+
+/*nav, form 모두 담은 컨테이너*/
+.main-container {
+  display: flex;
+}
+
+/*본문*/
+.delShopArticle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container {
+  justify-content: center;
+  width: 90%;
+  margin: 10px;
+}
+
+.delForm {
+	width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding);
+}
+
+
+.title {
+  padding: var(--padding);
+  text-align: center;
+  font-size: var(--font-big);
+  font-family: "S-CoreDream-6Bold";
+  margin-top: 20px;
+}
+
+
+.description {
+  font-size: var(--font-large);
+  font-family: "S-CoreDream-4Regular";
+  color: var(--grey-dark-color);
+  padding: 0px 0px var(--padding) 0px;
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+/*inputbox*/
+
+.del_bn,
+.del_password {
+  width: 250px;
+  height: 50px;
+  margin: 10px;
+  border: 1px solid var(--primary-brown-dark);
+  border-radius: var(--medium-tab);
+  padding: var(--padding);
+}
+
+.del_bn:focus,
+.del_password:focus {
+  background-color: var(--background-otmeal);
+}
+
+
+/*삭제버튼*/
+.delBtn {
+  width: 150px;
+  height: 40px;
+  background-color: var(--primary-brown-dark);
+  color: white;
+  border-radius: var(--big-tab);
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.delBtn:disabled {
+  background-color: var(--grey-light-color);
+  
+}
+
+
+@media screen and (max-width: 768px) { 
+  .search-group {
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .delShopArticle {
+  	margin-top: 50px;
+	}
+
+
+}

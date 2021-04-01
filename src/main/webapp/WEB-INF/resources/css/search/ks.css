@@ -1,0 +1,27 @@
+@charset "UTF-8";
+    .wrapper {
+      display: flex;
+    }
+
+    #tagmenu {
+      display: flex;
+      list-style: none;
+      width: 800px;
+ 			flex-wrap: wrap;
+    }
+
+    .taglist {
+      width: 50px;
+      height: 50px;
+      margin: 50px;
+    }
+	/* 태그버튼 클릭시 사라지게하는 css*/
+    .taglist.tagclicked {
+      background-color: red;
+    }
+    .hide{
+      display: none;
+    }
+    a{
+    text-decoration: none;
+    }

@@ -1,0 +1,224 @@
+@charset "UTF-8";
+* {
+  /* outline: 1px dashed red; */
+}
+
+/*현재 위치*/
+.pageTitle {
+  font-size: var(--font-medium);
+  border-bottom: 1px solid var(--grey-light-color);
+  padding: calc(var(--padding)*2);
+}
+
+.now {
+  font-weight: bold;
+}
+
+/*nav, form 모두 담은 컨테이너*/
+.main-container {
+  display: flex;
+}
+
+/*본문*/
+
+.title {
+  padding: var(--padding);
+  text-align: center;
+  font-size: var(--font-big);
+  font-family: "S-CoreDream-6Bold";
+  margin-top: 20px;
+}
+
+
+.reviewArticle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 10px;
+}
+
+
+.reviewBox {
+  margin: 0px 10px;
+  padding: calc(var(--padding)*1.5);
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-top: 1px solid var(--grey-light-color);
+  border-bottom: 1px solid var(--grey-light-color);
+}
+
+
+.reviewBox li {
+  margin: 5px;
+  display: flex;
+}
+
+
+
+/*작성정보*/
+.write-info {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-medium);
+  display: relative;
+}
+
+.info-writer {
+  font-weight: bold;
+  font-size: calc(var(--font-medium)*1.2)
+}
+
+.info-date {
+  font-size: calc(var(--font-small)*1.2);
+  color: var(--grey-dark-color);
+  position: absolute;
+  right: 20px;
+  top: 60px;
+}
+
+.star-widget {
+  width: 165px;
+}
+
+.star-widget input{
+  display: none;
+}
+
+.star-widget label{
+  font-size: 16px;
+  color: #444;
+  padding: calc(var(--padding)*0.5);
+  float: left;
+}
+
+.star-widget input:not(:checked),
+.star-widget input:not(:checked) ~ label{
+  color: #fd4;
+}
+
+input:checked ~ label{
+  color: #fd4;
+}
+
+input#rate-5:checked ~ label{
+  color: #fe7;
+  text-shadow: 0 0 20px #952;
+}
+
+/*회원이 쓴 리뷰*/
+.review_content {
+  width: 100%;
+  height: 60px;
+  border-radius: var(--medium-tab);
+  padding: var(--padding);
+  border: 1px solid var(--primary-brown-dark);
+}
+
+
+
+/*코멘트*/
+
+.fa-comments {
+  font-size: var(--font-large);
+  color: var(--grey-dark-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  cursor: pointer;
+}
+
+
+.reviewBox .commentBox {
+  justify-content: flex-end;
+  display: none;
+}
+
+.reviewBox .commentBox.active {
+  display: flex;
+}
+
+.comment {
+  margin-top: 10px;
+  height: 100px;
+  border-radius: var(--medium-tab);
+  background-color: var(--primary-brown-light);
+  width: 80%;
+  padding: 10px;
+  position: relative;
+  color: white;
+}
+
+.comment::after {
+  content: ' ';
+  display: inline-block;
+  position: absolute;
+  bottom: 7px;
+  right: -10px;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 14px solid var(--primary-brown-light);
+}
+
+.commentBtn {
+  color: white;
+  width: 80px;
+  margin-left: 20px;
+  align-self: flex-end;
+  border-radius: var(--small-tab);
+  cursor: pointer;
+  height: 30px;
+  background-color: var(--primary-brown-dark);
+}
+
+
+
+
+
+/*페이징*/
+
+.pagingBox {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.pagingItem {
+  display: flex;
+  margin: 10px;
+}
+
+.pagingItem li {
+  background-color: var(--primary-brown-dark);
+  color: var(--white-color);
+  margin: 0 1px;
+  padding: 0 calc(var(--padding)*0.5);
+  font-size: var(--font-small);
+}
+
+
+@media screen and (max-width: 768px) { 
+  
+  .reviewBox {
+    margin: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+
+	.reviewArticle {
+	  margin-top: 30px;
+	}
+
+
+
+}

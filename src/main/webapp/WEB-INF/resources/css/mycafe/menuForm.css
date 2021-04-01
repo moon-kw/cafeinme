@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+
+* {
+/*   outline: 1px dashed red; */
+}
+
+/*현재 위치*/
+.pageTitle {
+  font-size: var(--font-medium);
+  border-bottom: 1px solid var(--grey-light-color);
+  padding: calc(var(--padding)*2);
+}
+
+.now {
+  font-weight: bold;
+}
+
+/*nav, form 모두 담은 컨테이너*/
+.main-container {
+  display: flex;
+}
+
+/*본문*/
+.saleArticle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container {
+  justify-content: center;
+  width: 90%;
+  margin: 10px;
+}
+
+.menuJoinForm {
+	width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding);
+}
+
+
+.title {
+  padding: var(--padding);
+  text-align: center;
+  font-size: var(--font-big);
+  font-family: "S-CoreDream-6Bold";
+  margin-top: 20px;
+}
+
+
+.description {
+  font-size: var(--font-large);
+  font-family: "S-CoreDream-4Regular";
+  color: var(--grey-dark-color);
+  padding: 0px 0px var(--padding) 0px;
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.table {
+  width: 100%;
+}
+
+.menuJoin_table {
+  width: 100%;
+}
+
+.th-checkBox {
+  margin: 10px 20px;
+}
+
+th, td {
+	text-align: center;
+}
+
+td > select {
+	margin: 0 auto;
+}
+
+td {
+  padding: 10px 0px;
+}
+
+.td-checkBox {
+  margin: 10px 20px;
+}
+
+.form-select {
+  width: 90%;
+}
+
+.form-input {
+  border: none;
+  font-size: var(--font-medium);
+  border-bottom: 1px solid var(--grey-light-color);
+  width: 90%;
+}
+
+.form-pic img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+
+th:first-child,
+td:first-child {
+  width: 5%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 10%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 15%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 10%;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+  width: 20%;
+}
+
+th:nth-child(6),
+td:nth-child(6) {
+  width: 20%;
+}
+
+th:last-child,
+td:last-child {
+  width: 10%;
+}
+
+
+.addBtn, .delBtn, .submitBtn {
+  padding: 3px var(--padding);
+  border: 1px solid var(--grey-dark-color);
+  border-radius: var(--big-tab);
+  font-size: var(--font-medium);
+}
+
+.addBtn:hover, .delBtn:hover, .submitBtn:hover {
+  background-color: var(--primary-brown);
+  color: var(--white-color);
+  transition: background-color 100ms ease-in;
+}
+
+
+
+@media screen and (max-width: 768px) { 
+  
+	.saleArticle {
+	  margin-top: 30px;
+	}
+	
+	
+	.container {
+	  justify-content: center;
+	  width: 100%;
+	  margin: 10px;
+	}
+
+
+}

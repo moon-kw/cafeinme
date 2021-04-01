@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- mybatis에서 null값 허용 세팅 시작-->
+	<settings>
+	 <setting name="cacheEnabled" 	 value="false"/>
+	 <setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+	<!-- mybatis에서 null값 허용 세팅 종료-->
+	
+	<!-- mapper파일에서 parameterType 풀네임을 간단한 별칭으로 대체해서 사용-->
+	<typeAliases>
+		<!-- menuDAO -->
+		<typeAlias type="com.kh.cafeinme.menu.vo.MenuVO" alias="MenuVO"/>
+		<typeAlias type="com.kh.cafeinme.menu.vo.CategoryVO" alias="CategoryVO"/>
+	
+		<!-- orderDAO -->
+		<typeAlias type="com.kh.cafeinme.orders.vo.CartVO" alias="CartVO"/>
+		<typeAlias type="com.kh.cafeinme.orders.vo.OrderDetailVO" alias="OrderDetailVO"/>
+		<typeAlias type="com.kh.cafeinme.orders.vo.OrderVO" alias="OrderVO"/>
+		
+		<!-- reviewDAO -->
+		<typeAlias type="com.kh.cafeinme.reviews.vo.CommentVO" alias="CommentVO"/>
+		<typeAlias type="com.kh.cafeinme.reviews.vo.ReviewVO" alias="ReviewVO"/>
+	</typeAliases>
+</configuration>

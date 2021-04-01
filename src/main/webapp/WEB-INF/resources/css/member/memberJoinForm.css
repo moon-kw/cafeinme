@@ -1,0 +1,199 @@
+
+@charset "UTF-8";
+
+* {
+  /* outline: 1px dashed red; */
+}
+
+.top_arrow {
+	color: var(--secondary-orange);
+	font-size : 12px;
+	letter-spacing:3px;
+	position: absolute;
+	top: 10px;
+	left: 20px;
+}
+
+
+.top_arrow > a >img {
+	width: 30px;
+	transform: rotate(180deg);
+}
+
+#joinSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color:var(--background-otmeal);
+}
+
+.container {
+  width: 800px;
+  height: 100%;
+  margin: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 3px 2px 8px rgba(0,0,0,0.2);
+  background-color:var(--white-color);
+}
+
+.container > a > img {
+  width: 200px;
+  margin: 20px;
+}
+
+.search_address {
+	
+	width:60px;
+	background-color:var(--grey-light-color) ;
+	border-radius:var(--small-tab);
+	font-size:var(--font-small);
+	
+	color:black;
+	font-size:13px;
+	
+	margin-left:10px;
+}
+
+.search_address:hover {
+	color:white;
+	transition:.3s;
+	background-color:var(--primary-brown-light);
+}
+
+
+
+
+
+#joinForm {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imgBox {
+	margin-top: 80px;
+	
+}
+
+.memberJoinList {
+  width: 80%;
+}
+
+.memberJoinList li {
+  padding: var(--padding);
+}
+
+.title {
+  text-align: center;
+  font-size: var(--font-large);
+}
+
+
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding);
+  font-size: var(--font-medium);
+}
+
+.form-group-input {
+  padding: calc(var(--padding)*0.3);
+  border-radius: var(--small-tab);
+  border: 1px solid var(--grey-light-color);
+  text-indent:10px;
+}
+
+.form-group-input:focus {
+  background-color: var(--grey-light-color);
+}
+
+.address_bind {
+	width:100%;
+	display:flex;
+	align-items:center;
+	
+}
+
+::placeholder {
+	color:gray;
+}
+
+
+/*중복확인버튼*/
+
+.dupBtn {
+  width: 120px;
+  height: 20px;
+  font-size: var(--font-small);
+  border-radius: var(--small-tab);
+  background-color: var(--grey-light-color);
+  align-self: center;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.dupBtn:hover {
+	transition:.3s;
+	background-color:var(--primary-brown-light);
+	color:white;
+}
+
+
+/*회원가입 버튼*/
+.memberJoinList li:last-child {
+  padding: 0 calc(var(--padding)*15);
+}
+
+#joinBtn {
+  width: 100%;
+  height: 35px;
+  border-radius: var(--small-tab);
+  cursor: pointer;
+  border: 1px solid var(--secondary-orange);
+  background-color:transparent;
+  color: var(--secondary-orange);
+  margin: 30px 0px 50px 0px;
+  letter-spacing:2px;
+  font-size:12px;
+}
+
+#joinBtn:hover {
+  border: none;
+  background-color: var(--primary-brown-light);
+  color: white;
+  transition: all 100ms ease-in;
+}
+
+
+/*에러메세지*/
+.svr_msg {
+	font-size: var(--font-small);
+	color: var(--red-color);
+}
+
+#errmsg_pwchk {
+	font-size: var(--font-small);
+	color: var(--red-color);
+}
+
+
+@media screen and (max-width: 768px) { 
+  
+  #joinForm {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+}

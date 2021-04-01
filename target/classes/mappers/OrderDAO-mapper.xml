@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.orderDAO-mapper">
+	
+	<!-- 장바구니 등록 -->
+	<insert id="insertCartItem" parameterType="CartVO">
+		insert into cart (MEMBER_ID, CAFE_NO, MENU_NO, MENU_NAME, MENU_COUNT, MENU_PRICE)
+		values (#{MEMBER_ID}, #{CAFE_NO}, #{MENU_NO}, #{MENU_NAME}, #{MENU_COUNT}, #{MENU_PRICE})
+	</insert>
+	
+	<!-- 장바구니 상품 - 다른 카페상품 유무 확인 -->
+	<select id="isDifferentCafeItem" parameterType="hashmap" resultType="int">
+		select count(*) from cart where MEMBER_ID = #{member_id} and CAFE_NO != #{cafe_no}
+	</select>
+	
+	<!-- 장바구니 상품 - 같은 상품유무 확인 -->
+	<select id="isCartItem" parameterType="hashmap" resultType="int">
+		select count(*) from cart where MEMBER_ID = #{member_id} and MENU_NO = #{menu_no}
+	</select>
+	
+	<!-- 장바구니 상품 갯수 가져오기 -->
+	<select id="countOfCartItem" parameterType="hashmap" resultType="int">
+		select MENU_COUNT from cart where MEMBER_ID = #{member_id} and MENU_NO = #{menu_no}
+	</select>
+	
+	<!-- 장바구니 전체조회 -->
+	<select id="cartItemList" parameterType="hashmap" resultType="CartVO">
+		select * from cart where MEMBER_ID = #{member_id}
+	</select>
+	
+	<!-- 장바구니 수정 -->
+	<update id="modifyCartItem" parameterType="hashmap">
+		update cart set menu_count = #{menu_count} where member_id = #{member_id} and menu_no = #{menu_no}
+<!-- 		<selectKey keyProperty="menu_count" keyColumn="menu_count" resultType="int" order="AFTER">
+			select menu_count from cart 
+			where member_id = #{member_id} and menu_no = #{menu_no}
+		</selectKey> -->
+	</update>
+	
+	<!-- 장바구니 삭제 -->
+	<delete id="deleteCartItem" parameterType="hashmap">
+		delete cart where member_id = #{member_id} and menu_no = #{menu_no}
+	</delete>
+	
+	<!-- 장바구니 전체삭제 -->
+	<delete id="deleteCartItemAll" parameterType="String">
+		delete cart where member_id = #{member_id}
+	</delete>
+	
+	<!-- 주문등록 -->
+	<insert id="registOrder" parameterType="OrderVO">
+		insert into orders
+			(ORDER_NO, 
+			MEMBER_ID, 
+			CAFE_NO, 
+			ORDER_ITEMS, 
+			ORDER_PRICE, 
+			ORDER_COUNT, 
+			ORDER_ADDRESS1, 
+			ORDER_ADDRESS2, 
+			ORDER_PAYMENTTYPE,
+			ORDER_RECEIVETYPE,
+			ORDER_STATUS,
+			ORDER_REVIEW_YN) 
+		values 
+			(orders_order_no_seq.nextval, 
+			#{MEMBER_ID}, 
+			#{CAFE_NO}, 
+			#{ORDER_ITEMS},
+			#{ORDER_PRICE}, 
+			#{ORDER_COUNT}, 
+			#{ORDER_ADDRESS1}, 
+			#{ORDER_ADDRESS2}, 
+			#{ORDER_PAYMENTTYPE},
+			#{ORDER_RECEIVETYPE},
+			'접수대기',
+			0)
+		 <selectKey keyProperty="ORDER_NO" keyColumn="ORDER_NO" resultType="int" order="AFTER" >
+		 	select orders_order_no_seq.currval from dual
+		 </selectKey>
+	</insert>
+	
+	<!-- 상세주문등록 -->
+	<insert id="registOrderDetail" parameterType="hashmap">
+		insert into orderdetail
+			(ORDER_NO, 
+			MENU_NO, 
+			MENU_NAME, 
+			MENU_COUNT, 
+			MENU_PRICE)
+		values 
+			(#{order_no}, 
+			#{cartVO.MENU_NO}, 
+			#{cartVO.MENU_NAME}, 
+			#{cartVO.MENU_COUNT}, 
+			#{cartVO.MENU_PRICE})
+	</insert>
+	
+	<!-- 메뉴번호로 카페번호 찾기 -->
+	<select id="findCafeNObyMenuNO" parameterType="int" resultType="int">
+		select cafe_no from menu
+		where menu_no = ${menu_no}
+	</select>
+	
+	<!-- 주문번호로 카페번호 찾기 -->
+	<select id="findCafeNObyOrderNO" parameterType="hashmap" resultType="int">
+		select cafe_no from orders 
+		where order_no = #{order_no}
+	</select>
+	
+	<!-- 주문상태변경 -->
+	<update id="changeOrderStatus" parameterType="hashmap">
+		update orders 
+		set 
+			ORDER_STATUS = #{order_status} 
+		where 
+			MEMBER_ID = #{member_id} 
+		and ORDER_NO = #{order_no} 
+		and ORDER_DATE = #{order_date}
+	</update>
+	
+	<update id="changeOrderStatus2" parameterType="hashmap">
+		update orders 
+		set ORDER_STATUS = #{order_status} 
+		where order_no = #{order_no} 
+		and TO_CHAR(order_date, 'YYYYMMDD') = #{order_date}
+	</update>
+	
+	<!-- 주문내역목록 가져오기(고객용) -->
+	<select id="getCustOrderList" parameterType="hashmap" resultType="OrderVO">
+		select t1.order_no, 
+				t1.cafe_no, 
+				t2.cafe_name, 
+				t1.order_items, 
+				t1.order_price, 
+				t1.order_date, 
+				t1.order_paymenttype, 
+				t1.order_receivetype, 
+				t1.order_status, 
+				t1.order_review_yn 
+			from orders t1, cafe t2
+		where t1.cafe_no = t2.cafe_no
+		and MEMBER_ID = #{member_id}
+		and TO_CHAR(t1.order_date, 'YYYYMMDD') BETWEEN #{startDt} and #{endDt}
+		order by t1.order_date desc
+	</select>
+	
+	<!-- 주문테이블 전체레코드 수(고객아이디) -->
+	<select id="orderListTotalRecord" parameterType="hashmap" resultType="int">
+		select count(*)
+		from orders
+		where member_id = #{member_id}
+		and TO_CHAR(order_date, 'YYYYMMDD') BETWEEN #{startDt} and #{endDt}
+	</select>
+	
+	<!-- 주문내역목록 가져오기(고객용, 페이지) -->
+	<select id="getCustOrderListpage" parameterType="hashmap" resultType="OrderVO">
+		select *
+		from (select ROW_NUMBER () OVER (ORDER BY (t1.order_no) DESC) as num,
+		        t1.order_no, 
+		        t1.cafe_no, 
+		        t2.cafe_name, 
+		        t1.order_items, 
+		        t1.order_price, 
+		        t1.order_date, 
+		        t1.order_paymenttype, 
+		        t1.order_receivetype, 
+		        t1.order_status, 
+		        t1.order_review_yn 
+		    from orders t1, cafe t2
+		where t1.cafe_no = t2.cafe_no
+		and MEMBER_ID = #{member_id}
+		and TO_CHAR(t1.order_date, 'YYYYMMDD') BETWEEN #{startDt} and #{endDt})
+		where num between #{startRec} and #{endRec}
+	</select>
+	
+	<!-- 주문내용(고객용) -->
+	<select id="getCustOrderContent" parameterType="hashmap" resultType="OrderDetailVO">
+		select t1.order_no, 
+				t2.menu_name, 
+				t2.menu_count 
+			from orders t1, orderdetail t2
+			where t1.order_no = t2.order_no
+			and t1.member_id = #{member_id}
+			and TO_CHAR(t1.order_date, 'YYYYMMDD') BETWEEN #{startDt} and #{endDt}
+			order by t1.order_no desc
+	</select>
+	
+	<!-- 전체주문내역 -->
+	<select id="orderList" parameterType="String" resultType="OrderVO">
+		select * from orders where MEMBER_ID = #{MEMBER_ID}
+		order by order_date desc
+	</select>
+	
+	<!-- 주문상세보기 -->
+	<select id="getOrderDetail" parameterType="int" resultType="OrderDetailVO">
+		select * from orderdetail where ORDER_NO = #{ORDER_NO}
+	</select>
+	
+	<!-- 아이디로 카페번호 찾기 -->
+	<select id="getCafeNObyMemberID" parameterType="String" resultType="int">
+		select cafe_no from cafe
+		where cafe_ownerid = #{member_id}
+	</select>
+	
+	<!-- 주문관리목록 -->
+	<select id="getOrderManagementList" parameterType="hashmap" resultType="OrderVO">
+		select * from orders 
+		where cafe_no = #{cafe_no} 
+   			and TO_CHAR(order_date, 'YYYYMMDD') = #{order_date}
+   		order by order_date desc
+	</select>
+	
+	<!-- 주문관리목록 주문상세아이템 -->
+	<select id="getOrderDetailList" parameterType="hashmap" resultType="OrderDetailVO">
+		select t2.order_no, t2.menu_name, t2.menu_count from orders t1, orderdetail t2
+		where t1.order_no = t2.order_no
+			and t1.cafe_no = #{cafe_no}
+			and TO_CHAR(t1.order_date, 'YYYYMMDD') = #{order_date}
+		order by order_date desc
+	</select>
+	
+	<!-- 판매목록 -->
+	<select id="getSalesManagementList" parameterType="hashmap" resultType="OrderVO">
+		select t2.* 
+		from (select ROW_NUMBER () OVER (ORDER BY (order_no) DESC) as num,
+		    t1.order_no,
+		    t1.member_id,
+		    t1.order_price,
+		    t1.order_count,
+		    t1.order_date,
+		    t1.order_address1,
+		    t1.order_address2,
+		    t1.order_paymenttype,
+		    t1.order_receivetype,
+		    t1.order_status
+		    from orders t1
+		    where cafe_no = #{cafe_no}
+		        and TO_CHAR(t1.order_date, 'YYYYMMDD') between #{startDt} and #{endDt}
+		        <if test="order_status != null">
+		        	and t1.order_status = #{order_status}
+		        </if>
+		        ) t2
+		where num between #{startRec} and #{endRec}
+	</select>
+	
+	<!-- 판매목록 총 레코드 수 -->
+	<select id="salesListTotalRecord" parameterType="hashmap" resultType="int">
+		select count(*)
+	    from orders t1
+	    where cafe_no = #{cafe_no}
+	        and TO_CHAR(order_date, 'YYYYMMDD') between #{startDt} and #{endDt}
+		    <if test="order_status != null">
+		    	and order_status = #{order_status}
+		    </if>
+	</select>
+</mapper>

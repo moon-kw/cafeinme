@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.menuDAO-mapper">
+
+	<!-- 카테고리 가져오기 -->
+	<select id="getCategory" resultType="CategoryVO">
+		select * from categorys
+	</select>
+	
+	<!-- 카테고리 가져오기 -->
+	<select id="getCategory2" parameterType="int" resultType="CategoryVO">
+		select distinct t1.category_no, t1.category_name from categorys t1, menu t2
+		where t1.category_no = t2.menu_category
+			and t2.cafe_no = #{cafe_no}
+		order by t1.category_no asc
+	</select>
+
+	<!-- 카테고리 가져오기(온라인판매) -->
+	<select id="getCategory3" parameterType="int" resultType="CategoryVO">
+		select distinct t1.category_no, t1.category_name from categorys t1, menu t2
+		where t1.category_no = t2.menu_category
+			and t2.cafe_no = #{cafe_no} and t2.menu_onlinesale = 1
+		order by t1.category_no asc
+	</select>
+	
+	<!-- 메뉴 1개 가져오기 -->
+	<select id="getMyonemenu" parameterType="int" resultType="MenuVO">
+		select t1.menu_no, 
+			t1.menu_name, 
+			t1.menu_price, 
+			t1.menu_content, 
+			t1.menu_category, 
+			t1.menu_onlinesale, 
+			t1.cafe_no, 
+			t2.mfile_no, 
+			t2.mfile_origin_name, 
+			t2.mfile_change_name, 
+			t2.mfile_size, 
+			t2.mfile_type, 
+			t2.mfile_path
+		from menu t1 left outer join menufile t2 on t1.menu_no = t2.menu_no
+		where t1.menu_no = #{menu_no}
+	</select>	
+	
+	<!-- 온라인판매 메뉴 가져오기 -->
+	<select id="getOnlinesaleMenu" parameterType="int" resultType="MenuVO">
+		select t1.menu_no, 
+			t1.menu_name, 
+			t1.menu_price, 
+			t1.menu_content, 
+			t1.menu_category, 
+			t1.menu_onlinesale, 
+			t1.cafe_no, 
+			t2.mfile_no, 
+			t2.mfile_origin_name, 
+			t2.mfile_change_name, 
+			t2.mfile_size, 
+			t2.mfile_type, 
+			t2.mfile_path
+		from menu t1 left outer join menufile t2 on t1.menu_no = t2.menu_no
+		where t1.cafe_no = #{cafe_no} and menu_onlinesale = 1
+	</select>
+</mapper>

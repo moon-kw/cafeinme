@@ -1,0 +1,239 @@
+@charset "UTF-8";
+
+* {
+  /* outline: 1px dashed red; */
+}
+
+/*현재 위치*/
+.pageTitle {
+  font-size: var(--font-medium);
+  border-bottom: 1px solid var(--grey-light-color);
+  padding: calc(var(--padding)*2);
+}
+
+.now {
+  font-weight: bold;
+}
+
+/*nav, form 모두 담은 컨테이너*/
+.main-container {
+  display: flex;
+}
+
+
+/*본문*/
+.accountArticle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container {
+  justify-content: center;
+  width: 90%;
+  margin: 10px;
+}
+
+.title {
+  padding: var(--padding);
+  text-align: center;
+  font-size: var(--font-big);
+  font-family: "S-CoreDream-6Bold";
+  margin-top: 20px;
+}
+
+.search-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-group {
+  margin: 0px 10px;
+}
+
+
+
+/*조회 버튼*/
+.btn-group button {
+  padding: calc(var(--padding)*0.2) calc(var(--padding)*0.5);
+  margin: 5px;
+  border-radius: var(--small-tab);
+  border: 1px solid var(--primary-brown-dark);
+  color: var(--primary-brown-dark);
+}
+
+.btn-group button:hover {
+  background-color: var(--primary-brown-dark);
+  color: white;
+}
+
+
+
+
+/*정산 금액 박스*/
+.account-box {
+  width: 20%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: calc(var(--padding)*2);
+}
+
+.account_title {
+  font-size: calc(var(--font-medium)*1.2);
+  grid-row: 1 / 3;
+  text-align: center;
+  padding: var(--padding);
+  margin-bottom: 0;
+}
+
+.account_title i {
+  z-index: 2;
+  font-size: var(--font-big);
+  position: relative;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.account_title i::after {
+  content: ' ';
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: var(--big-tab);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--primary-blue-main);
+}
+
+.account-box span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: calc(var(--font-medium)*1.2);
+  border-bottom: 2px solid var(--primary-blue-main);
+}
+
+
+
+/*테이블 col너비조정*/
+.accountTable {
+  width: 100%;
+  padding: var(--padding);
+  text-align: center;
+}
+
+td {
+	vertical-align:middle;
+}
+
+.order_num {
+  width: 8%;
+}
+
+.order_cust {
+  width: 8%;
+}
+
+.order_content {
+	width: 16%;
+}
+
+.order_price {
+  width: 8%;
+}
+
+.order_date {
+  width: 10%;
+}
+
+.order_address {
+  width: 20%;
+}
+
+.order_pay {
+	width: 10%;
+}
+
+.order_receive {
+  width: 10%;
+}
+
+.order_status {
+  width: 10%;
+}
+
+
+/*기간별 조회*/
+.filter-group input {
+  border: none;
+  width: 150px;
+  padding: calc(var(--padding)*0.2);
+  margin: 5px;
+  border-bottom: 1px solid var(--primary-brown-dark);
+}
+
+.filter-group button {
+  padding: calc(var(--padding)*0.2) calc(var(--padding)*0.5);
+  margin: 5px;
+  border-radius: var(--small-tab);
+  background-color: var(--primary-brown-dark);
+  color: white;
+}
+
+
+
+
+.saleBtn {
+  width: 80px;
+  height: 30px;
+  border-radius: var(--small-tab);
+  background-color: blue;
+}
+
+/*paging*/
+.pageBtn {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.page-item {
+	padding: 0 calc(var(--padding)*0.5);
+	background-color: var(--primary-brown-dark);
+	color: var(--white-color);
+	text-align: center;
+}
+
+.page-item.active {
+	background-color: var(--primary-brown) !important;
+}
+
+
+
+@media screen and (max-width: 768px) { 
+	.account-box {
+  		width: 60%;
+	}
+	
+	.accountTable {
+		font-size: var(--font-small);
+	}
+	
+  .search-group {
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+	
+	.accountArticle {
+  margin-top: 30px;
+	}
+
+}

@@ -1,0 +1,373 @@
+* {
+  /* outline: 1px dashed red; */
+}
+
+body {
+  background-color: var(--background-otmeal);
+}
+
+.orderArticle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  justify-content: center;
+  width: 80%;
+  margin: 10px;
+  height: 100%;
+  background-color: whitesmoke;
+  border:1px solid var(--secondary-orange-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding);
+}
+
+.title {
+  padding: var(--padding);
+  text-align: center;
+  font-size: var(--font-big);
+  margin-top: 20px;
+}
+
+
+
+/*주문내용*/
+.orderItem_item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*주문카페*/
+.itemCafe {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.itemCafe img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+}
+
+.itemCafe .cafe_name {
+  margin: 10px;
+  padding: var(--padding);
+  font-size: var(--font-large);
+}
+
+.itemTable {
+  width: 80%;
+  text-align: center;
+  justify-content: center;
+  padding: var(--padding);
+  border-bottom: 2px solid var(--secondary-orange-light);
+  border-top: 2px solid var(--secondary-orange-light);
+  margin: 20px;
+}
+
+.itemTable th,
+.itemTable td {
+  padding: var(--padding);
+}
+
+.minput {
+	background-color: transparent;
+	border: none;
+}
+
+.MENU_COUNT {
+	width: 40px;
+}
+
+.MENU_PRICE {
+	width: 80px;
+}
+
+
+
+/*주문 회원 정보*/
+.orderItem_info {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.orderItem_info_member {
+  width: 50%;
+  padding: var(--padding);
+}
+
+.order_h4 {
+  padding: var(--padding);
+}
+
+.order_h5 {
+  padding: var(--padding);
+}
+
+
+/*탭*/
+.newAddressBox,
+.togoBox {
+  display: none;
+}
+
+.delivery:checked ~ .newAddressBox,
+.togo:checked ~ .togoBox {
+  display: block;
+}
+
+
+.orderItem_info_member label {
+  margin-right: 20px;
+
+}
+
+.orderItem_info_member input {
+  margin-left: 10px;
+}
+
+.newAddressBox li label,
+.togoBox li label {
+  display: inline-block;
+  width: 70px;
+}
+
+/*배달*/
+.newAddressBox {
+
+}
+
+.newAddressBox input {
+  height: 30px;
+  margin: 10px;
+}
+
+.newAddressBox li>input{
+  width: 60%;
+  padding: calc(var(--padding)*0.5);
+}
+
+.newAddressBox li:nth-child(2) {
+  display: flex;
+}
+
+.inputbox {
+  width: 60%;
+  margin-left: 15px;
+}
+
+.inputbox input {
+  width: 100%;
+  margin: 3px 0;
+  background-color: red;
+}
+
+.addressBtn {
+  background-color: var(--secondary-orange);
+  color: var(--white-color);
+  padding: calc(var(--padding)*0.5);
+  border-radius: var(--medium-tab);
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+
+.newAddressBox input {
+  border: none;
+  padding: calc(var(--padding)*0.5);
+  border-radius: var(--small-tab);
+  background-color: var(--grey-light-color)
+}
+
+.newAddressBox input:focus {
+  background-color: var(--background-otmeal);
+}
+
+
+
+/*togo*/
+.togoBox {
+  width: 100%;
+}
+
+.togoBox input {
+  height: 30px;
+  width: 60%;
+  margin: 10px;
+  border: none;
+  padding: calc(var(--padding)*0.5);
+  border-radius: var(--small-tab);
+  background-color: var(--grey-light-color)
+}
+
+/*결제정보*/
+.orderItem_info_price {
+  width: 50%;
+  padding: var(--padding);
+  padding-left: calc(var(--padding)*2);
+  border-left: 2px dashed var(--secondary-orange-light);
+}
+
+.orderItem_info_price li {
+  padding: calc(var(--padding)*0.5);
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderItem_info_price li input {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--secondary-orange-light);
+}
+
+.orderprice_h4 {
+  padding: var(--padding) 0;
+}
+
+
+/****************************카드결제*******************************/
+
+.paymentForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white-color);
+  border: var(--grey-light-color);
+  padding: var(--padding);
+  margin: 20px 0;
+  border: 1px solid var(--grey-light-color);
+}
+
+
+/*결제문구*/
+.pay_title {
+  margin-top: 20px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-size: var(--font-big);
+}
+
+
+.payment_card {
+  width: 100%;
+  align-items: center;
+}
+
+/*항목전체*/
+.card_item {
+  display: flex;
+  margin: 10px;
+  padding: var(--padding);
+}
+
+.card_item input {
+  padding: var(--padding);
+  border-radius: var(--small-tab);
+  border: none;
+  background-color: var(--background-otmeal);
+}
+
+/*카드종류*/
+.cardSort {
+  padding: var(--padding);
+  justify-content: space-around;
+}
+
+.cardSort label {
+  display: flex;
+  padding: calc(var(--padding)*0.2);
+  align-items: center;
+}
+
+.cardSort img {
+  width: 100px;
+  height: 40px;
+}
+
+/*카드번호*/
+.cardNum {
+  flex-direction: column;
+}
+
+/*유효기간,cvc*/
+.cardDate {
+  justify-content: space-between;
+}
+
+.cardDate input {
+  width: 100%;
+}
+
+.card_item_date {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/*결제동의체크*/
+
+.cardApply {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardApply input {
+  margin-right: 10px;
+}
+
+/*결제버튼*/
+.payBtn {
+  width: 200px;
+  padding: var(--padding);
+  background-color: var(--secondary-orange);
+  color: white;
+  font-size: var(--font-large);
+  cursor: pointer;
+  margin: 30px;
+}
+
+.payBtn:disabled {
+  background-color: var(--grey-light-color);
+  color: white;
+}
+
+
+@media screen and (max-width: 768px) { 
+  .orderItem_info {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .orderItem_info_member {
+    width: 100%;
+  }
+
+  .orderItem_info_price {
+    width: 100%;
+    border: none;
+  }
+  
+}
+
+.oinput{
+  text-align: right;
+}
+
+.minput{
+  text-align: center;
+}
